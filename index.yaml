@@ -3,6 +3,16 @@ entries:
   api:
   - apiVersion: v2
     appVersion: v1.0
+    created: "2024-11-05T10:09:35.950040333Z"
+    description: A Helm chart for APIs in kubernetes
+    digest: 325d4868c4f7c63fd68bfebe9da865e1166dc9f6e2b835327a20942f34b3f9eb
+    name: api
+    type: application
+    urls:
+    - https://github.com/DARR3NG/helmcharts/releases/download/api-0.1.1/api-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: v1.0
     created: "2024-11-05T10:22:08.896280787+01:00"
     description: A Helm chart for APIs in kubernetes
     digest: 7e5595ca0e05c9d3fa5c5e57aa8ffc0612d348c56b90e71b0edc31f909e77870
@@ -44,4 +54,4 @@ entries:
     urls:
     - https://github.com/DARR3NG/helmcharts/releases/download/test-0.1.0/test-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-05T10:07:33.429875774Z"
+generated: "2024-11-05T10:09:35.950053607Z"
