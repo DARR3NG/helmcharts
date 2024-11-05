@@ -33,4 +33,15 @@ entries:
     urls:
     - releases/redisinsight-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-05T10:22:08.895525072+01:00"
+  test:
+  - apiVersion: v2
+    appVersion: v1.0
+    created: "2024-11-05T10:07:33.429870164Z"
+    description: A Helm chart for APIs in kubernetes
+    digest: f656e50e3f860bf74d724d1ef44183d85a3ac4d3e96c2a125801de0532ded08f
+    name: test
+    type: application
+    urls:
+    - https://github.com/DARR3NG/helmcharts/releases/download/test-0.1.0/test-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-11-05T10:07:33.429875774Z"
