@@ -1,0 +1,5 @@
+redisinsight_image: redislabs/redisinsight
+redisinsight_port: 8001
+redisinsight_ingrees:
+  enabled: true
+  url: redisin.kub

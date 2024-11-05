@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redisinsight-{{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+    - port: {{ .Values.redisinsight_port }}
+      targetPort: 5540
+  selector:
+    app: redisinsight-{{ .Release.Name }}

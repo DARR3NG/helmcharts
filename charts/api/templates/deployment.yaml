@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+{{ include "api.header" . | indent 2 }}
+
+spec:
+  replicas: {{ .Values.api_replicas }}
+  selector: 
+    matchLabels:
+      app: api-{{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: api-{{ .Release.Name }}
+    spec:
+      containers:
+        - name: api-{{ .Release.Name }}
+          image: {{ .Values.api_image }}
+          ports:
+            - containerPort: {{ .Values.api_port }} 
+          {{- if .Values.api_resources }}
+          resources:
+{{ .Values.api_resources | toYaml | indent 12}}
+          {{- end }}
+          {{- if .Values.api_env }}
+          env:
+{{  .Values.api_env | toYaml | indent 12 }}
+          {{- end }}
+          {{- if .Values.api_configfile }}
+          volumeMounts:
+            - mountPath: "/usr/src/app/config.yaml"
+              name: config
+              subPath: config.yaml
+          {{- end }}
+
+      {{- if .Values.api_configfile }}
+      volumes:
+        - name: config
+          secret:
+            secretName: api-{{ .Release.Name }} 
+      {{- end }}   
+
